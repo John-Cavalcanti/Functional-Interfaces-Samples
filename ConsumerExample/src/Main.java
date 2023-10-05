@@ -21,9 +21,10 @@ public class Main {
         numeros.stream().forEach(imprimePares);
 
         // forma mais enxuta possivel de fazer uma iteracao sobre uma lista
-        // o metod forEach recebe um consumer que nesse caso eh um metodo lambda com n como argumento
+        // o metodo forEach recebe um consumer que nesse caso eh um metodo lambda com n como argumento
         // n recebera cada numero da lista numeros e ira executar o metodo imprimeImpar com n como argumento
         // dessa forma pudemos reduzir uma grande quantidade de linhas
+        // nao ha nem nessecidade de declarar o consumer explicitamente
         numeros.forEach(n -> imprimeImpar(n));
         
     }

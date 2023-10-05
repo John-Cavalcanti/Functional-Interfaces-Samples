@@ -18,6 +18,7 @@ public class Main {
 
 
         List<String> listaSaudacoes1 = Arrays.asList("Bom dia", "Good Morning", "Hola, como estas");
+        // lambda function abaixo         vvvvvv
         Supplier<List<String>> saudacoes = () -> listaSaudacoes1;
         List<String> listaSaudacoes2 = saudacoes.get();
 

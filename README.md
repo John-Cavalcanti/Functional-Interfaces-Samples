@@ -5,11 +5,12 @@ Aplicação de Stream APIs e Functional Interfaces em Java. Apenas alguns exerc�
 
 ## Geral
 
-Basicamente Functional interfaces funcionam como Metodos Lambda e serve para todas as functional interfaces.
+Basicamente Functional interfaces funcionam como métodos Lambda, tal tipo de implementação de método serve para todas as functional interfaces.
 
 ### Consumer
 
-A functional interface consumer funciona como um metodo void, onde pode receber argumentos mas nao retorna nada.
+A functional interface consumer funciona como um metodo void, onde pode receber argumentos mas não retorna nada.
+Apenas excuta suas linhas de código <br>
 Exemplo :
 
 ```Java
@@ -22,8 +23,8 @@ Consumer<Integer> imprimePares = numero -> imprimePar(numero);
 numeros.stream().forEach(imprimePares);
 ```
 
-Entretanto as duas ultimas linhas de codigo acima podem ser resumidas em umas que faz todos o trabalho de declarar
-o consumer e executar o metodo imprimePares com o forEach:
+Entretanto as duas últimas linhas de código acima podem ser resumidas em apenas uma que faz todo o trabalho de declarar
+o consumer e executar o método imprimePares com o forEach:
 
 ```Java
 numeros.forEach(n -> imprimeImpar(n));

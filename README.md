@@ -58,3 +58,23 @@ System.out.println("\n");
 // imprimindo a segunda lista de saudacoes
 listaSaudacoes2.forEach(System.out::println);
 ```
+
+### Function
+
+Uma Function recebe um argumento e retorna um argumento de um tipo especificado, ela é utilizada para executar algum tipo de alteração no código ou funcionalidade específica.
+
+Exemplo abaixo mostra uma function dobrando os números de dentro de uma List :
+
+```Java
+List<Integer> numeros = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+
+// for mais limpa e simples de escrever um uma function
+List<Integer> numerosDobrados = numeros.stream().map(n -> n * 2).toList();
+        
+// forma mais longa e explicita de escrever abaixo
+        
+// Function<Integer, Integer> dobraNumeros = numero -> numero * 2;
+// List<Integer> numerosDobrados = numeros.stream().map(dobraNumeros).toList();
+
+numerosDobrados.forEach(System.out::println);
+```

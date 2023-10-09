@@ -30,3 +30,31 @@ o consumer e executar o método imprimePares com o forEach:
 numeros.forEach(n -> imprimeImpar(n));
 ```
 
+### Supplier 
+
+A Supplier não recebe nenhum argumento e normalmente retorna algum valor esperado, fornecendo alguma informação ou informações para algum atributo na class, daí que vem seu nome supplier que do inglês traduzido é fornecedor
+
+Exemplo : 
+
+```Java
+Supplier<String> saudacao = () -> "Bom dia";
+
+List<String> listaSaudacoes = Stream.generate(saudacao)
+.limit(5)
+.toList();
+
+// gerando uma nova lista de saudacoes para usar no supplier
+List<String> listaSaudacoes1 = Arrays.asList("Bom dia", "Good Morning", "Hola, como estas");
+// lambda function abaixo         vvvvvv
+Supplier<List<String>> saudacoes = () -> listaSaudacoes1;
+// atribuindo a lista de saudacoes a nova lista atraves do supplier
+List<String> listaSaudacoes2 = saudacoes.get();
+
+// Imprimir as saudações geradas
+listaSaudacoes.forEach(System.out::println);
+
+System.out.println("\n");
+
+// imprimindo a segunda lista de saudacoes
+listaSaudacoes2.forEach(System.out::println);
+```

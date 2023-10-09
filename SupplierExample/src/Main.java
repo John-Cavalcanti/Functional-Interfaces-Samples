@@ -16,10 +16,11 @@ public class Main {
         .limit(5)
         .toList();
 
-
+        // gerando uma nova lista de saudacoes para usar no supplier
         List<String> listaSaudacoes1 = Arrays.asList("Bom dia", "Good Morning", "Hola, como estas");
         // lambda function abaixo         vvvvvv
         Supplier<List<String>> saudacoes = () -> listaSaudacoes1;
+        // atribuindo a lista de saudacoes a nova lista atraves do supplier
         List<String> listaSaudacoes2 = saudacoes.get();
 
         // Imprimir as saudações geradas
@@ -27,6 +28,7 @@ public class Main {
 
         System.out.println("\n");
 
+        // imprimindo a segunda lista de saudacoes
         listaSaudacoes2.forEach(System.out::println);
     }
 }

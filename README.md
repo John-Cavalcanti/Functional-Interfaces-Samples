@@ -106,10 +106,10 @@ E por último mas não menos importante temos o operador binário que sempre rec
 
 ``` Java
 // neste exemplo farei apenas das formas reduzidas
-        List<Integer> numeros  = Arrays.asList(1,2,3,4,5);
+List<Integer> numeros  = Arrays.asList(1,2,3,4,5);
 
-        int resultado = numeros.stream().reduce(0, Integer::sum);
-        // ou numeros.stream().reduce(0, (num1, num2) -> num1 + num2)
+int resultado = numeros.stream().reduce(0, Integer::sum);
+// ou numeros.stream().reduce(0, (num1, num2) -> num1 + num2)
 
-        System.out.println(resultado);
+System.out.println(resultado);
 ```

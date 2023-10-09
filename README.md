@@ -78,3 +78,38 @@ List<Integer> numerosDobrados = numeros.stream().map(n -> n * 2).toList();
 
 numerosDobrados.forEach(System.out::println);
 ```
+
+### Predicate
+
+Predicate normalmente é utilizada para tratar listas de dados, como no exemplo abaixo temos duas formar de filtrar uma listas e alterá-la para imprimir apenas palavras com mais de 5 caracteres :
+
+```Java
+List<String> linguagens = Arrays.asList("kotlin", "Java", "javascript", "python", "ruby");
+
+// escrevendo da forma mais longa
+System.out.println("Forma 1");
+Predicate<String> maisDe5caracteres = palavra -> palavra.length() > 5;
+linguagens.stream().filter(maisDe5caracteres).forEach(System.out::println);
+
+// forma curta
+System.out.println("\nForma 2");
+linguagens.stream().filter(palavra -> palavra.length() > 5).forEach(System.out::println);
+
+// o metodo filter por vezes pode ser utilizar para melhorar o consumer
+// como por exemplo o codigo de exemplo deste repositorio de consumer pode ser reescrito como
+// numeros.stream().filter(numeros -> numeros % 2 == 0).forEach(System.out::println);
+```
+
+### Binary Operator
+
+E por último mas não menos importante temos o operador binário que sempre recebe dois valores para realizar uma operação entre os mesmos e normalmente os valores são do mesmo tipo, no exemplo abaixo mostra como somar dois valores.
+
+``` Java
+// neste exemplo farei apenas das formas reduzidas
+        List<Integer> numeros  = Arrays.asList(1,2,3,4,5);
+
+        int resultado = numeros.stream().reduce(0, Integer::sum);
+        // ou numeros.stream().reduce(0, (num1, num2) -> num1 + num2)
+
+        System.out.println(resultado);
+```
